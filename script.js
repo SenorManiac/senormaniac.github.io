@@ -37,10 +37,10 @@ console.log(o);
 
 function updateScores() {
     if ((x == 0 && o == 1) || (x == 1 && o == 2) || (x == 2 && o == 0)) {
-        humanScore++;
+        computerScore++;
         alert('You won this round: The score is ' + humanScore + ' to ' + computerScore);
     } else if ((x == 1 && o == 0) || (x == 2 && o == 1) || (x == 0 && o == 2)) {
-        computerScore++;
+        humanScore++;
         alert('Computer won this round: The score is ' + humanScore + ' to ' + computerScore);
     } else {
         alert('This round was a tie: The score is ' + humanScore + ' to ' + computerScore);
