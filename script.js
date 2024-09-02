@@ -27,9 +27,10 @@ else
     i = prompt('Rock, Paper, Or Scissors',);
 }
 console.log(x)
-while (x !== 0  && x !== 1 && x !== 2){
+function checkChoice(){
+    while (x == 3){
     getHumanChoice()
-}
+}}
 
 console.log('Flag')
 console.log(x);
@@ -52,7 +53,9 @@ updateScores();
 
 function playRound(){
     i = prompt('Rock, Paper, Or Scissors');
+    x = 3;
     getHumanChoice();
+    checkChoice();
      o = getRandomInt();
     updateScores();
 }
