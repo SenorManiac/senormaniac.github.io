@@ -1,4 +1,3 @@
-console.log("Hello World");
 
 let o = getRandomInt()
 function getRandomInt() {
