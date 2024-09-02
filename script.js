@@ -1,3 +1,4 @@
+console.log("Hello World");
 
 let o = function getRandomInt() {
     return Math.floor(Math.random() * 3);
@@ -5,7 +6,7 @@ let o = function getRandomInt() {
 let x = 3;
 
 let humanScore = 0;
-let computerScore = 0;
+let computerScore =0;
 
 let i = prompt('Rock, Paper, Or Scissors') 
 console.log(i)
