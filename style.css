@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif; 
     
 }
 
@@ -10,13 +11,10 @@ body {
     background-color: rgb(50, 50, 54);
     justify-content: space-between;
     display: flex;
-    font-family: 'Roboto', sans-serif; 
-    font-weight: ;
+    flex-direction: column;
+    
 }
 
-body {
-   /* Default font for body text */
-}
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
@@ -31,6 +29,8 @@ h1, h2, h3 {
     color: white;
     font-weight: 800;
     font-size: 30px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
 }
 
 #body {
@@ -54,7 +54,7 @@ h1, h2, h3 {
 .info{
     text-align: center;
     color: white;
-    margin-top: 3%;
+    margin-top: 0%;
 }
 .score{
     display: flex;
@@ -226,7 +226,6 @@ button{
 #round{
     color: White;
     text-align: center;
-    margin-bottom: 3%;
     margin-top: 5%;
     font-size: larger;
 }
@@ -237,8 +236,7 @@ button{
     font-size: large;
 }
 .rules{
-    margin-bottom: 5%;
-    margin-top: 5%;
+      margin-top: 0%;
     text-align: center;
 }
 a{ color: white;
