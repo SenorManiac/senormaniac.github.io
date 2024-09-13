@@ -158,26 +158,6 @@ function playRound(){
 console.log(humanScore)
 console.log(computerScore)
 
-<<<<<<< HEAD
-function continuePlaying(){
-    while (humanScore < 5  && computerScore < 5){
-        playRound();
-    }
-}
-
-continuePlaying();
-
-function declareWinner(){
-    if (humanScore == 5){
-        alert('You won the match');
-    }
-    else if(computerScore == 5)
-        alert('Computer won the match');
-    
-}
-
-declareWinner();
-=======
 // function continuePlaying(){
 //     while (humanScore < 5  && computerScore < 5){
 //         playRound();
@@ -239,4 +219,3 @@ window.onclick = function(event) {
 span.onclick = function() {
     modal2.style.display = "none";
 }
->>>>>>> rps/main
