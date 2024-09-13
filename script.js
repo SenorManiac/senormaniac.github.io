@@ -6,9 +6,9 @@ function getRandomInt() {
 let x = 5;
 let humanScore = 0;
 let computerScore =0;
-yourscore.innerHTML = "<h1>" + humanScore + "</h1>";
-computerscore.innerHTML = "<h1>" + computerScore + "</h1>";
-const buttons = document.querySelectorAll("button");
+yourscore.innerHTML = "<h1>" + humanScore + "</h1><p>Your Score</p>";
+computerscore.innerHTML = "<h1>" + computerScore + "</h1><p>Computer Score</p>";
+const buttons = document.querySelectorAll(".images button");
 
 function getMyEmoji() {
     let e;
@@ -44,17 +44,20 @@ function getComputerEmoji() {
 
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
-  // and for each one we add a 'click' listener
-  button.addEventListener("click", () => {
-    x = button.id;
-    playRound();
-    const myEmoji = getMyEmoji();
-    const computerEmoji = getComputerEmoji();
-    const outcome = getOutcome(x, o);
-    document.getElementById('round').innerHTML = "You chose " + myEmoji + " and the computer chose " + computerEmoji;
-    document.getElementById('outcome').innerText = outcome;
-    x = 5;
-  });
+    // and for each one we add a 'click' listener
+    button.addEventListener("click", () => {
+        if (declareWinner()) {
+            return;
+        }
+        x = button.id;
+        playRound();
+        const myEmoji = getMyEmoji();
+        const computerEmoji = getComputerEmoji();
+        const outcome = getOutcome(x, o);
+        document.getElementById('round').innerHTML = "You chose " + myEmoji + " and the computer chose " + computerEmoji;
+        document.getElementById('outcome').innerText = outcome;
+        x = 5;
+    });
 });
 
 // let i = prompt('Rock, Paper, Or Scissors') 
@@ -87,14 +90,13 @@ console.log(x)
 function updateScores() {
     if ((o == 1 && (x == 0 || x == 4)) || (o == 2 && (x == 1 || x == 3)) || (o == 0 && (x == 2 || x == 3)) || (o == 3 && (x == 4 || x == 1)) || (o == 4 && (x == 0  || x == 2))) {
         computerScore++;
-        yourscore.innerHTML = "<h1>" + humanScore + "</h1>";
-        computerscore.innerHTML = "<h1>" + computerScore + "</h1>";
-
+        yourscore.innerHTML = "<h1>" + humanScore + "</h1><p>Your Score</p>";
+computerscore.innerHTML = "<h1>" + computerScore + "</h1><p>Computer Score</p>";
         // alert('You lost this round: The score is ' + humanScore + ' to ' + computerScore);
     } else if ((x == 1 && (o == 0 || o == 4)) || (x == 2 && (o == 1 || o == 3)) || (x == 0 && (o == 2 || o == 3)) || (x == 3 && (o == 4 || o == 1)) || (x == 4 && (o == 0  || o == 2))) {
         humanScore++;
-        yourscore.innerHTML = "<h1>" + humanScore + "</h1>";
-        computerscore.innerHTML = "<h1>" + computerScore + "</h1>";
+        yourscore.innerHTML = "<h1>" + humanScore + "</h1><p>Your Score</p>";
+        computerscore.innerHTML = "<h1>" + computerScore + "</h1><p>Computer Score</p>";
         // alert('Computer lost this round: The score is ' + humanScore + ' to ' + computerScore);
     } else {
         // alert('This round was a tie: The score is ' + humanScore + ' to ' + computerScore);
@@ -165,12 +167,56 @@ console.log(computerScore)
 
 
 function declareWinner(){
-    if (humanScore == 5){
-        alert('You won the match');
+    if (humanScore == 5 || computerScore == 5){
+    var modal2 = document.getElementById("myModal2");
+    var span = document.getElementsByClassName("close")[1];
+
+    modal2.style.display = "block";
+    span.onclick = function() {
+        modal2.style.display = "none";
     }
-    else if(computerScore == 5)
-        alert('Computer won the match');
-    
+    var yes = document.getElementById("yes");
+    var no = document.getElementById("no");
+    if (humanScore == 5) {
+        document.getElementById('winner').innerText = "Congratulations! You won the game!";
+    } else if (computerScore == 5) {
+        document.getElementById('winner').innerText = "Sorry! You lost the game!";
+    }
+    yes.onclick = function() {
+        location.reload();
+    }
+    no.onclick = function() {
+        location.href = "index.html";
+    }
+}}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("rules");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
 }
 
-declareWinner();
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+span.onclick = function() {
+    modal2.style.display = "none";
+}
