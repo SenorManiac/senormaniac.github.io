@@ -10,6 +10,8 @@ yourscore.innerHTML = "<h1>" + humanScore + "</h1><p>Your Score</p>";
 computerscore.innerHTML = "<h1>" + computerScore + "</h1><p>Computer Score</p>";
 const buttons = document.querySelectorAll(".images button");
 
+
+
 function getMyEmoji() {
     let e;
     if (x == 0) {
@@ -41,15 +43,25 @@ function getComputerEmoji() {
     }
     return y;
 }
-
+function setValueForx(button){
+    if (button.id  == 'id0') {
+        x = 0
+      } else if (button.id == 'id1') {
+        x = 1;
+    } else if (button.id == 'id2') {
+        x = 2;
+    } else if (button.id == 'id3') {
+        x = 3;
+    } else if (button.id == 'id4') {
+        x = 4;
+    }
+   
+}
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
     // and for each one we add a 'click' listener
     button.addEventListener("click", () => {
-        if (declareWinner()) {
-            return;
-        }
-        x = button.id;
+        setValueForx(button);
         playRound();
         const myEmoji = getMyEmoji();
         const computerEmoji = getComputerEmoji();
@@ -57,6 +69,9 @@ buttons.forEach((button) => {
         document.getElementById('round').innerHTML = "You chose " + myEmoji + " and the computer chose " + computerEmoji;
         document.getElementById('outcome').innerText = outcome;
         x = 5;
+        if (declareWinner()) {
+            return;
+        }
     });
 });
 
@@ -170,7 +185,7 @@ function declareWinner(){
     var modal2 = document.getElementById("myModal2");
     var span = document.getElementsByClassName("close")[1];
 
-    modal2.style.display = "block";
+    modal2.style.display = "flex";
     span.onclick = function() {
         modal2.style.display = "none";
     }
@@ -185,13 +200,16 @@ function declareWinner(){
         location.reload();
     }
     no.onclick = function() {
-        location.href = "index.html";
+        location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+    span.onclick = function() {
+        modal2.style.display = "none";
     }
 }}
 
 // Get the modal
-var modal = document.getElementById("myModal");
-
+var modal = document.getElementsByClassName("modal")[0];
+var modalcontent1 = document.getElementsByClassName("modal-content")[0];
 // Get the button that opens the modal
 var btn = document.getElementById("rules");
 
@@ -200,7 +218,10 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
-  modal.style.display = "block";
+  modal.style.display = "flex";
+  modalcontent1.style.height ="270px";
+
+  
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -216,6 +237,4 @@ window.onclick = function(event) {
 }
 
 
-span.onclick = function() {
-    modal2.style.display = "none";
-}
+

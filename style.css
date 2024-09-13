@@ -3,12 +3,23 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    
 }
 
 body {
     background-color: rgb(50, 50, 54);
     justify-content: space-between;
     display: flex;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: ;
+}
+
+body {
+   /* Default font for body text */
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
 }
 
 #banner {
@@ -18,7 +29,8 @@ body {
     width: 100%;
     align-content: center;
     color: white;
-    font-family: 'BadaBoom BB', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
 }
 
 #body {
@@ -56,7 +68,8 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
-   margin: 3%;
+    margin: 3%;
+    max-width:100%;
 }
 span{
     margin:1%
@@ -65,14 +78,156 @@ button{
     background-color:  rgb(50, 50, 54);;
     border: none;
     color: white;
+    scale: ;
 }
+.images button:hover{
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+    
+}
+
+.images button:hover{
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+}
+
+/* Base styles for the elements */
+#id0, #id1, #id2, #id3, #id4 {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the parent */
+}
+
+@keyframes showTooltip {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    50% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Hover styles for #id0 (Rock) */
+#id0::after {
+    content: "Rock";
+    position: absolute;
+    top: 100%; /* Position below the element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out, visibility 0s 1s; /* Delay and smooth transition */
+}
+
+#id0:hover::after {
+    animation: showTooltip 3s ease-in-out 1s forwards;
+}
+/* Hover styles for #id1 (Paper) */
+#id1::after {
+    content: "Paper";
+    position: absolute;
+    top: 100%; /* Position below the element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out, visibility 0s 1s;
+}
+
+#id1:hover::after {
+    animation: showTooltip 3s ease-in-out 1s forwards;
+}
+
+/* Hover styles for #id2 (Scissors) */
+#id2::after {
+    content: "Scissors";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out, visibility 0s 1s;
+}
+
+#id2:hover::after {
+    animation: showTooltip 3s ease-in-out 1s forwards;
+}
+
+/* Hover styles for #id3 (Lizard) */
+#id3::after {
+    content: "Lizard";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out, visibility 0s 1s;
+}
+
+#id3:hover::after {
+    animation: showTooltip 3s ease-in-out 1s forwards;
+}
+
+/* Hover styles for #id4 (Spock) */
+#id4::after {
+    content: "Spock";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out, visibility 0s 1s;
+}
+
+#id4:hover::after {
+    animation: showTooltip 3s ease-in-out 1s forwards;
+}
+
+
+
 .emoji {
-    font-size: 6em; /* Adjust the size as needed */
+    font-size: clamp(2rem, 10vw, 6rem); /* Adjust the size as needed */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+    max
 }
 #round{
     color: White;
     text-align: center;
     margin-bottom: 3%;
+    margin-top: 5%;
     font-size: larger;
 }
 #outcome{
@@ -83,6 +238,7 @@ button{
 }
 .rules{
     margin-bottom: 5%;
+    margin-top: 5%;
     text-align: center;
 }
 a{ color: white;
@@ -110,26 +266,30 @@ a{ color: white;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   
   .modal-content {
     background-color: #424040;
-    margin: 18% 40%; /* 15% from the top and centered */
+    margin: 25% 25% /* 15% from the top and centered */
     padding:  2%;
     border: 1px solid #888;
-    width: auto; /* Could be more or less, depending on screen size */
+    width: 200px; /* Could be more or less, depending on screen size */
     border-radius: 5px;
     color: white;
 }
   
 .modal-content2 {
     background-color: #424040;
-    margin: 18% 40%; /* 15% from the top and centered */
-    padding:  2%;
+    margin: 25% 25%; /* 15% from the top and centered */
     border: 1px solid #888;
     width: auto; /* Could be more or less, depending on screen size */
     border-radius: 5px;
     color: white;
+    padding: 2%;
 }
   
   /* The Close Button */
