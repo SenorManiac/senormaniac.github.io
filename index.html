@@ -3,10 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js"></script>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
+    <div id="banner">
+        Rock, Paper, Scissors, Lizard, Spock
+    </div>
+    <div id="body">
+        <div class="info">
+            <h1>First to 5 wins!</h1>
+        </div>
+        <div class="container2">
+            <div class="Gameinfo">
+                <div class="score">
+                    <div id="yourscore">
+                        <p>Your score</p>
+                    </div>
+                    <div id="computerscore">
+                        <p>Computer score</p>
+                    </div>                    
+                </div>
+            </div>
+            <div class="images">
+                <button id="0"><span class="emoji">&#x270A;</span></button> <!-- Closed Fist emoji -->
+                <button id="1"><span class="emoji">&#x1F590;</span></button> <!-- Open Hands emoji -->
+                <button id="2"><span class="emoji">&#x270C;</span></button> <!-- Scissors emoji -->
+                <button id="3"><span class="emoji">&#x1F98E;</span></button> <!-- Lizard emoji -->
+                <button id="4"><span class="emoji">&#x1F596;</span></button> <!-- Raised Hand with Part Between Middle and Ring Fingers emoji -->
+            </div>
+            <div id="round">
+
+            </div>
+            <div id="outcome">
+                
+            </div>
+            
+        </div>
+        <div class="rules">
+            <button id="rules">Rules</button>
+            <div id="myModal" class="modal">
+
+                
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>The rules are very simple: <br><br>Scissors cuts paper.<br> Paper covers rock.<br> Rock crushes lizard.<br> Lizard poisons Spock.<br> Spock smashes scissors.<br> Scissors decapitates lizard.<br> Lizard eats paper.<br> Paper disproves Spock.<br> Spock vaporizes rock.<br> And as it always has, rock crushes scissors.</p>                </div>
+              
+              </div>
+              
+        </div>      
+        <div id="myModal2" class="modal">
+            <div class="modal-content2">
+            <span class="close">&times;</span>
+            <div class="winner"></div>
+            <p>Would you like to play again?</p>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+            </div>
+        </div>
+    </div>        
+    </div>
+    <div id="footer">
+        This is some text
+    </div>
+    <script src="script.js"></script>  
 </body>
-</html> 
+</html>
