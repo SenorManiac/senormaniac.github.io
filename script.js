@@ -60,8 +60,7 @@ buttons.forEach((button) => {
     });
 });
 
-// let i = prompt('Rock, Paper, Or Scissors') 
-// console.log(i)
+
 
 // function getHumanChoice(){
 // if (i.toLowerCase() == 'rock'){
